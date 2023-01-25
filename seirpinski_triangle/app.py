@@ -1,0 +1,1 @@
+from .sierpinski import SierpinskiTriangle
