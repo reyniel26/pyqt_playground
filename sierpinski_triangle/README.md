@@ -11,7 +11,7 @@ The Chaos Game
 5. Plot the current position.
 6. Repeat from step 3.
 
-[Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
-[Chaos Game](https://www.pythoninformer.com/generative-art/iterated-function-systems/chaos-game/)
-[How To Determine if a Point Is in a 2D Triangle](https://www.baeldung.com/cs/check-if-point-is-in-2d-triangle)
-[Applying the midpoint formula to find the midpoint between two points](https://youtu.be/6mx8HIf3oUk?t=74)
+- [Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
+- [Chaos Game](https://www.pythoninformer.com/generative-art/iterated-function-systems/chaos-game/)
+- [How To Determine if a Point Is in a 2D Triangle](https://www.baeldung.com/cs/check-if-point-is-in-2d-triangle)
+- [Applying the midpoint formula to find the midpoint between two points](https://youtu.be/6mx8HIf3oUk?t=74)

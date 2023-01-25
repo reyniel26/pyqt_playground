@@ -38,12 +38,15 @@ class SierpinskiTriangle():
 
     def get_angle(self,triangle):
         """Get angle based on provided triangle"""
-        a,b,c = triangle
-        return self.get_angle_by_points(a,b,c)
+        point_a,point_b,point_c = triangle
+        return self.get_angle_by_points(point_a,point_b,point_c)
 
-    def get_angle_by_points(self,a, b, c):
+    def get_angle_by_points(self,point_a,point_b,point_c):
         """Get angle based on provided points"""
-        ang = math.degrees(math.atan2(c[1]-b[1], c[0]-b[0]) - math.atan2(a[1]-b[1], a[0]-b[0]))
+        ang = math.degrees(
+            math.atan2(point_c[1]-point_b[1], point_c[0]-point_b[0])
+            - math.atan2(point_a[1]-point_b[1], point_a[0]-point_b[0])
+            )
         return ang + 360 if ang < 0 else round(ang,3)
 
     def is_60_angle(self,triangle):
@@ -52,9 +55,9 @@ class SierpinskiTriangle():
 
     def get_area_triangle(self,a, b, c):
         """Get Area of Triangle"""
-        AB = (b[0]-a[0],b[1]-a[1])
-        AC = (c[0]-a[0],c[1]-a[1])
-        cross_prod = (AB[0] * AC[1])-(AB[1] * AC[0])
+        ab = (b[0]-a[0],b[1]-a[1])
+        ac = (c[0]-a[0],c[1]-a[1])
+        cross_prod = (ab[0] * ac[1])-(ab[1] * ac[0])
         return abs(cross_prod)/2
 
     def is_inside_triangle(self,point,triangle):
