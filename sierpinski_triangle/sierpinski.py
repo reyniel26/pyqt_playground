@@ -118,15 +118,17 @@ class SierpinskiTriangle():
         """Get Vertices"""
         return self._vertices
 
-    def get_points(self):
+    def get_points(self,up_to:int=None):
         """Get Points"""
+        if up_to != None:
+            return self._points[0:up_to]
         return self._points
 
-    def get_points_x(self):
-        return [x[0] for x in self.get_points()]
+    def get_points_x(self,up_to=None|int):
+        return [x[0] for x in self.get_points(up_to)]
 
-    def get_points_y(self):
-        return [y[1] for y in self.get_points()]
+    def get_points_y(self,up_to=None|int):
+        return [y[1] for y in self.get_points(up_to)]
 
     def get_tri_point_x(self):
         return [x[0] for x in self.get_vertices()]

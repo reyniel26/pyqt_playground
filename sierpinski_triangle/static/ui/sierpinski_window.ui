@@ -643,7 +643,14 @@ border: 1px solid #E5E5E5;
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0,0,1">
+              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1,0,0,0,1,0">
+               <item>
+                <widget class="QPushButton" name="start_btn">
+                 <property name="text">
+                  <string>&lt;&lt;</string>
+                 </property>
+                </widget>
+               </item>
                <item>
                 <widget class="QPushButton" name="prev_btn">
                  <property name="font">
@@ -703,6 +710,13 @@ border: 1px solid #E5E5E5;
                  </property>
                  <property name="text">
                   <string>NEXT</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="end_btn">
+                 <property name="text">
+                  <string>&gt;&gt;</string>
                  </property>
                 </widget>
                </item>

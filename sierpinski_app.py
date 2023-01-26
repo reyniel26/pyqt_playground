@@ -48,6 +48,8 @@ class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
 
         self.run_chaos_btn.clicked.connect(self.run_chaos_game)
 
+        self.start_btn.clicked.connect(self.start_step)
+        self.end_btn.clicked.connect(self.end_step)
         self.prev_btn.clicked.connect(self.previous)
         self.next_btn.clicked.connect(self.next)
 
@@ -98,6 +100,7 @@ class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
         self.generate_valid_triangle()
         self.generate_random_point()
         self.generate_random_steps()
+        self.step_all.setText(str(self.num_steps.value()))
 
     def scatter_points(self,x_data,y_data,point_color="points"):
         color ={
@@ -109,15 +112,23 @@ class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
         scatter.addPoints(x_data, y_data)
         return scatter
 
-    def run_chaos_game(self):
+    def run_chaos_game_step(self,steps,is_step=True):
+        """Run Chaos Game by steps"""
+
         self.status_browser.clear()
         self.status_browser.append(("-"*10))
         self.status_browser.append(f"Running Chaos Game")
+
         starting_point=(self.point_s_x.value(),self.point_s_y.value())
         if self.is_inside_triangle(starting_point,self.get_vertices()):
-            steps = self.num_steps.value()
             self.status_browser.append(f"Starting point - {starting_point} ")
-            super().run_chaos_game(starting_point, steps)
+
+            if not is_step:
+                super().run_chaos_game(starting_point, steps)
+
+            if len(self.get_points())<=0:
+                self.status_browser.append(f"**Run the Chaos Game first**")
+                return False
 
             self.graph_widget.clear()
             self.graph_widget.addItem(
@@ -130,25 +141,39 @@ class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
 
             self.graph_widget.addItem(
                 self.scatter_points(
-                    self.get_points_x(),self.get_points_y(),"points"))
+                    self.get_points_x(steps),self.get_points_y(steps),"points"))
 
-            for step,point in enumerate(self.get_points()):
+            for step,point in enumerate(self.get_points(steps)):
                 self.status_browser.append(f"Step #{step+1} - {point}  ")
 
-            self.step_at.setText("1")
+            self.step_at.setText(str(steps))
             self.step_all.setText(str(self.num_steps.value()))
         else:
             self.status_browser.append(
                 f"The Starting point {starting_point} is not inside of the triangle"
                 )
 
+    def run_chaos_game(self):
+        """Re-run the chaos game"""
+        steps = self.num_steps.value()
+        self.run_chaos_game_step(steps,is_step=False)
+
+    def start_step(self):
+        self.run_chaos_game_step(0)
+
+    def end_step(self):
+        self.run_chaos_game_step(self.num_steps.value())
+
     def previous(self):
-        self.status_browser.clear()
-        self.status_browser.append("Previous Button Feature not enabled yet")
+        steps = int(self.step_at.text())-1
+        steps = steps if steps > 0 else 0
+        self.run_chaos_game_step(steps)
 
     def next(self):
-        self.status_browser.clear()
-        self.status_browser.append("Next Button Feature not enabled yet")
+        steps = int(self.step_at.text())+1
+        max_steps = self.num_steps.value()
+        steps = steps if steps < max_steps else max_steps
+        self.run_chaos_game_step(steps)
 
 app = QApplication(sys.argv)
 
