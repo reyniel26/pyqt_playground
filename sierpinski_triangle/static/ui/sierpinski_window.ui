@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>900</width>
     <height>600</height>
    </rect>
   </property>
@@ -19,6 +19,40 @@
      <width>900</width>
      <height>0</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/**
+
+MODERN UI
+
+Blue-50    #E3F2FD
+Blue-500  #2196F3
+
+**/
+
+/** DEFAULT BTN**/
+
+QPushButton {
+	border-radius:5%;
+	padding:5%;
+	font-weight:bold;
+}
+
+QPushButton  {
+
+	color:#2196F3;
+	background-color: #E3F2FD;
+	border: 1px solid white;
+
+}
+
+QPushButton:pressed{
+
+color: white;
+background-color:#2196F3;
+border: 1px solid #E3F2FD;
+
+}</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
     <property name="leftMargin">
@@ -35,6 +69,12 @@
     </property>
     <item>
      <widget class="QWidget" name="main_widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">QWidget#main_widget {
+	 background-color: #FBFCFD
+}
+</string>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="leftMargin">
         <number>10</number>
@@ -49,413 +89,662 @@
         <number>10</number>
        </property>
        <item>
-        <widget class="QLabel" name="main_title">
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;Sierpinski Triangle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
          <property name="leftMargin">
-          <number>10</number>
+          <number>0</number>
          </property>
          <property name="topMargin">
-          <number>10</number>
+          <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>10</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
-          <number>10</number>
+          <number>0</number>
          </property>
          <item>
-          <widget class="PlotWidget" name="graph_widget" native="true">
-           <property name="minimumSize">
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>400</width>
-             <height>0</height>
+             <width>40</width>
+             <height>20</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QWidget#graph_widget {
-    border: 2px solid gray;
-	border-radius: 10px;
-}
-
-QWidget {
-   background-color: white
-}</string>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="main_title">
+           <property name="font">
+            <font>
+             <family>Roboto</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:600;&quot;&gt;Sierpinski Triangle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="panel_widget" native="true">
+          <widget class="QLabel" name="label_4">
            <property name="minimumSize">
             <size>
-             <width>400</width>
-             <height>0</height>
+             <width>50</width>
+             <height>50</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QWidget#panel_widget {
-    border: 2px solid gray;
-	border-radius: 10px;
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../images/Sierpinski_Triangle_Logo-nobg.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="PlotWidget" name="graph_widget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget#graph_widget {
+     border: 1px solid #E5E5E5;
+	border-radius: 4px;
+	background-color: white
 }
 
-QWidget {
-   background-color: white
+</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="panel_widget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget#panel_widget {
+
+	 border: 1px solid #E5E5E5;
+	border-radius: 4px;
+	background-color: white
+}
+</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,0,0,0,0,0,0">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>10</number>
+             </property>
+             <property name="topMargin">
+              <number>10</number>
+             </property>
+             <property name="rightMargin">
+              <number>10</number>
+             </property>
+             <property name="bottomMargin">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QTextBrowser" name="status_browser">
+               <property name="font">
+                <font>
+                 <family>Roboto</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QTextBrowser#status_browser{
+border: 1px solid #E5E5E5;
+	border-radius: 4px;
+	background-color: #FAFAFA;
 }</string>
+               </property>
+               <property name="placeholderText">
+                <string>I just see this in TikTok and I want to try it. So that I research, and created a desktop app that will emulate Sierpinski Triangle.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0,1">
+               <item>
+                <widget class="QLabel" name="label_5">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;TRIANGLE POINTS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>SCALE</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QDoubleSpinBox" name="scale_num">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="minimum">
+                      <double>1.000000000000000</double>
+                     </property>
+                     <property name="maximum">
+                      <double>1000000.000000000000000</double>
+                     </property>
+                     <property name="value">
+                      <double>100.000000000000000</double>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,0,1,0">
+                   <property name="spacing">
+                    <number>5</number>
+                   </property>
+                   <item>
+                    <spacer name="horizontalSpacer">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_6">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>A</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="point_a">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>(x,y)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0,1,0">
+                   <property name="spacing">
+                    <number>5</number>
+                   </property>
+                   <item>
+                    <spacer name="horizontalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_7">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>B</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="point_b">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>(x,y)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_4">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,1,0">
+                   <property name="spacing">
+                    <number>5</number>
+                   </property>
+                   <item>
+                    <spacer name="horizontalSpacer_5">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_8">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>C</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="point_c">
+                     <property name="font">
+                      <font>
+                       <family>Roboto</family>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>(x,y)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_6">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPushButton" name="generate_triangle_btn">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>GENERATE</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,0,0,1">
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;STARTING POINTS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QDoubleSpinBox" name="point_s_x">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QDoubleSpinBox" name="point_s_y">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="generate_starting_point_btn">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>GENERATE</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <widget class="QLabel" name="label_11">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;NUMBER OF STEPS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="num_steps">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="generate_steps_btn">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>GENERATE</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="generate_all_btn">
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>GENERATE ALL</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="run_chaos_btn">
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>RUN CHAOS GAME</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0,0,1">
+               <item>
+                <widget class="QPushButton" name="prev_btn">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>PREVIOUS</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="step_at">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>####</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_3">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>steps of</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="step_all">
+                 <property name="font">
+                  <font>
+                   <family>Roboto</family>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>####</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="next_btn">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>NEXT</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="version_label">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;v1.1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,0,0,0,0,0,0,0">
-            <property name="spacing">
-             <number>10</number>
-            </property>
-            <property name="leftMargin">
-             <number>10</number>
-            </property>
-            <property name="topMargin">
-             <number>10</number>
-            </property>
-            <property name="rightMargin">
-             <number>10</number>
-            </property>
-            <property name="bottomMargin">
-             <number>10</number>
-            </property>
-            <item>
-             <widget class="QTextBrowser" name="status_browser"/>
-            </item>
-            <item>
-             <widget class="Line" name="line_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0,1">
-              <item>
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>TRIANGLE POINTS</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QVBoxLayout" name="verticalLayout_3">
-                <property name="spacing">
-                 <number>1</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="label">
-                    <property name="text">
-                     <string>SCALE</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QDoubleSpinBox" name="scale_num">
-                    <property name="minimum">
-                     <double>1.000000000000000</double>
-                    </property>
-                    <property name="maximum">
-                     <double>1000000.000000000000000</double>
-                    </property>
-                    <property name="value">
-                     <double>100.000000000000000</double>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,0,1,0">
-                  <property name="spacing">
-                   <number>5</number>
-                  </property>
-                  <item>
-                   <spacer name="horizontalSpacer">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_6">
-                    <property name="text">
-                     <string>A</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="point_a">
-                    <property name="text">
-                     <string>(x,y)</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_2">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0,1,0">
-                  <property name="spacing">
-                   <number>5</number>
-                  </property>
-                  <item>
-                   <spacer name="horizontalSpacer_3">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_7">
-                    <property name="text">
-                     <string>B</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="point_b">
-                    <property name="text">
-                     <string>(x,y)</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_4">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,1,0">
-                  <property name="spacing">
-                   <number>5</number>
-                  </property>
-                  <item>
-                   <spacer name="horizontalSpacer_5">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_8">
-                    <property name="text">
-                     <string>C</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="point_c">
-                    <property name="text">
-                     <string>(x,y)</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <widget class="QPushButton" name="generate_triangle_btn">
-                <property name="text">
-                 <string>GENERATE</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="Line" name="line">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,0,0,1">
-              <item>
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>STARTING POINTS</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QDoubleSpinBox" name="point_s_x">
-                <property name="maximum">
-                 <double>1000000.000000000000000</double>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QDoubleSpinBox" name="point_s_y">
-                <property name="maximum">
-                 <double>1000000.000000000000000</double>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="generate_starting_point_btn">
-                <property name="text">
-                 <string>GENERATE</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_9">
-              <item>
-               <widget class="QLabel" name="label_11">
-                <property name="text">
-                 <string>NUMBER OF STEPS</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QSpinBox" name="num_steps">
-                <property name="maximum">
-                 <number>1000000</number>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="generate_steps_btn">
-                <property name="text">
-                 <string>GENERATE</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="QPushButton" name="generate_all_btn">
-              <property name="text">
-               <string>GENERATE ALL</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="run_chaos_btn">
-              <property name="text">
-               <string>RUN CHAOS GAME</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0,0,1">
-              <item>
-               <widget class="QPushButton" name="prev_btn">
-                <property name="text">
-                 <string>PREVIOUS</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="step_at">
-                <property name="text">
-                 <string>####</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>steps of</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="step_all">
-                <property name="text">
-                 <string>####</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="next_btn">
-                <property name="text">
-                 <string>NEXT</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <family>Roboto</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Developed by: Reyniel Mark Escamillas, January 2023&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -470,7 +759,7 @@ QWidget {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>900</width>
      <height>18</height>
     </rect>
    </property>
