@@ -132,3 +132,5 @@ playgrounds.py
 playground.py
 playground/
 playgrounds/
+*.xlsx
+*.csv
