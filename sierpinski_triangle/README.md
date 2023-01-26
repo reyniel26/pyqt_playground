@@ -26,11 +26,11 @@ Pre-condition: Must sure all required dependencies are installed.
 1. Run PyInstaller
 - Option 1: Create `one file` exe ( Suggested)
     ```
-    pyinstaller.exe --add-data "sierpinski_triangle/*.py;./sierpinski_triangle/" --add-data "sierpinski_triangle/*.ico;."  --add-data "sierpinski_triangle/static/images/*.png;./static/images" --add-data "sierpinski_triangle/static/ui/*.ui;./static/ui" --onefile --windowed --icon=sierpinski_triangle/app.ico sierpinski_app.py
+    pyinstaller.exe --hiddenimport "pandas"  --hiddenimport "pyqtgraph" --add-data "sierpinski_triangle/*.py;./sierpinski_triangle/" --add-data "sierpinski_triangle/*.ico;."  --add-data "sierpinski_triangle/static/images/*.png;./static/images" --add-data "sierpinski_triangle/static/ui/*.ui;./static/ui" --onefile --windowed --icon=sierpinski_triangle/app.ico sierpinski_app.py
     ```
 - Option 2:
     ```
-    pyinstaller.exe --add-data "sierpinski_triangle/*.py;./sierpinski_triangle/" --add-data "sierpinski_triangle/*.ico;."  --add-data "sierpinski_triangle/static/images/*.png;./static/images" --add-data "sierpinski_triangle/static/ui/*.ui;./static/ui" --windowed --icon=sierpinski_triangle/app.ico sierpinski_app.py
+    pyinstaller.exe  --hiddenimport "pandas"  --hiddenimport "pyqtgraph" --add-data "sierpinski_triangle/*.py;./sierpinski_triangle/" --add-data "sierpinski_triangle/*.ico;."  --add-data "sierpinski_triangle/static/images/*.png;./static/images" --add-data "sierpinski_triangle/static/ui/*.ui;./static/ui" --windowed --icon=sierpinski_triangle/app.ico sierpinski_app.py
     ```
 
 
