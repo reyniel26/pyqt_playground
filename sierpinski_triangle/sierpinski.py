@@ -109,6 +109,7 @@ class SierpinskiTriangle():
         """
 
         point = starting_point
+        self._points = []
         for x in range(steps):
             point = self.get_midway_point(point,self.get_random_vertex())
             self._points.append(point)
@@ -120,3 +121,18 @@ class SierpinskiTriangle():
     def get_points(self):
         """Get Points"""
         return self._points
+
+    def get_points_x(self):
+        return [x[0] for x in self.get_points()]
+
+    def get_points_y(self):
+        return [y[1] for y in self.get_points()]
+
+    def get_tri_point_x(self):
+        return [x[0] for x in self.get_vertices()]
+
+    def get_tri_point_y(self):
+        return [y[1] for y in self.get_vertices()]
+
+    def generate_random_steps(self):
+        return random.randint(0, 1000)
