@@ -1,7 +1,7 @@
 import os
 import sys
 
-basedir = os.path.dirname(__file__)
+
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -11,7 +11,9 @@ def resource_path(relative_path):
         # pylint: disable=no-member
     except Exception:
         # base_path = os.path.abspath(".")
-        base_path = basedir
+        base_path = os.path.dirname(__file__)
+
+
 
     return os.path.join(base_path, relative_path)
 

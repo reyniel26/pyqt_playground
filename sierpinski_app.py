@@ -1,14 +1,15 @@
-import sys
 import os
+import sys
 
 import pyqtgraph as pg
-from path_config import static_image_path, static_ui_path
 from PyQt6 import uic
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from sierpinski import SierpinskiTriangle
 
-VERSION = "v1.1"
+from sierpinski_triangle.config import static_image_path, static_ui_path
+from sierpinski_triangle.sierpinski import SierpinskiTriangle
+
+VERSION = "v0.1"
 
 class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
 

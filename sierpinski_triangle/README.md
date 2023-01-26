@@ -19,13 +19,18 @@ The Chaos Game
 - [Applying the midpoint formula to find the midpoint between two points](https://youtu.be/6mx8HIf3oUk?t=74)
 
 ## Create Installer
-Pre-condition: Must be inside of sierpinski_triangle module before running this
+Pre-condition: Must sure all required dependencies are installed.
+
 1. Run PyInstaller
 - Option 1: Create `one file` exe ( Suggested)
     ```
-    pyinstaller.exe --add-data "*.ico;."  --add-data "static/images/*.png;./static/images"  --add-data "static/images/*.jpg;./static/images"  --add-data "static/ui/*.ui;./static/ui" --onefile --windowed --icon=app.ico app.py
+    pyinstaller.exe --add-data "sierpinski_triangle/*.py;./sierpinski_triangle/" --add-data "sierpinski_triangle/*.ico;."  --add-data "sierpinski_triangle/static/images/*.png;./static/images" --add-data "sierpinski_triangle/static/ui/*.ui;./static/ui" --onefile --windowed --icon=sierpinski_triangle/app.ico sierpinski_app.py
     ```
 - Option 2:
     ```
-    pyinstaller.exe --add-data "*.ico;."  --add-data "static/images/*.png;./static/images"  --add-data "static/images/*.jpg;./static/images"  --add-data "static/ui/*.ui;./static/ui" --windowed --icon=app.ico app.py
+    pyinstaller.exe --add-data "sierpinski_triangle/*.py;./sierpinski_triangle/" --add-data "sierpinski_triangle/*.ico;."  --add-data "sierpinski_triangle/static/images/*.png;./static/images" --add-data "sierpinski_triangle/static/ui/*.ui;./static/ui" --windowed --icon=sierpinski_triangle/app.ico sierpinski_app.py
     ```
+
+
+2. Run Inno Setup
+    - Compile the sierpinsi_installer_builder.iss using Inno Setup
