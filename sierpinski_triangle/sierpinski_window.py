@@ -70,52 +70,100 @@ class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
         self.point_s_y.setValue(0)
         self.num_steps.setValue(0)
         self.status_browser.clear()
+        self.step_at.setText("0")
+        self.step_all.setText("0")
+        self.graph_widget.clear()
 
     def export_points(self):
         self.status_browser.clear()
         self.status_browser.append("Exporting points")
+        try:
+            savefilename, _ = QFileDialog.getSaveFileName(
+                self, "Save as",
+                os.path.join("","sierpinski triangle points"),
+                "Sheet data files (*.csv)"
+            )
 
-        savefilename, _ = QFileDialog.getSaveFileName(
-            self, "Save as",
-            os.path.join("","sierpinski triangle points"),
-            "Sheet data files (*.csv)"
-        )
+            points_x = self.get_tri_point_x()
+            points_x.append(self.point_s_x.value())
+            points_x.extend(self.get_points_x())
 
-        points_x = self.get_tri_point_x()
-        points_x.append(self.point_s_x.value())
-        points_x.extend(self.get_points_x())
+            points_y = self.get_tri_point_y()
+            points_y.append(self.point_s_y.value())
+            points_y.extend(self.get_points_y())
 
-        points_y = self.get_tri_point_y()
-        points_y.append(self.point_s_y.value())
-        points_y.extend(self.get_points_y())
+            label = ["a","b","c","starting_point"]
+            label.extend([f"step#{step+1}" for step in range(len(self.get_points()))])
+            points = {
+                "label":label,
+                "x":points_x,
+                "y":points_y,
 
-        label = ["a","b","c","starting_point"]
-        label.extend([f"step#{step+1}" for step in range(len(self.get_points()))])
-        points = {
-            "label":label,
-            "x":points_x,
-            "y":points_y,
+            }
 
-        }
+            df = pd.DataFrame(points)
 
-        df = pd.DataFrame(points)
-
-        if savefilename:
-            df.to_csv(savefilename,index=False)
-            self.status_browser.append(f"Points has been exported to:\n{savefilename}")
-
+            if savefilename:
+                df.to_csv(savefilename,index=False)
+                self.status_browser.append(f"Points has been exported to:\n{savefilename}")
+            else:
+                self.status_browser.append("Canceled import")
+        except:
+            self.status_browser.append("Error occur")
 
     def import_points(self):
         self.status_browser.clear()
-        self.status_browser.append("Import Points Button Feature not enabled yet")
+        self.status_browser.append("Importing points")
+        try:
+            # Import file
+            filename, _ = QFileDialog.getOpenFileName(
+                self,'Import points',"",'Sheet data files (*.csv)')
+            if filename:
+                # validate file
+                df = pd.read_csv(filename)
+                if not set(['x','y']).issubset(df.columns):
+                    return False
 
-    def generate_valid_triangle(self):
-        self.set_range()
-        self.point_a.setText(str(self.range))
-        super().generate_valid_triangle()
+                if df.shape[0] < 4:
+                    return False
+                df = df[["x","y"]]
+                triangle = list(df.iloc[0:3].itertuples(index=False, name=None))
+                starting_point = list(df.iloc[4])
+                points = list(df.drop(df.iloc[[0,4]].index).itertuples(index=False, name=None))
+
+                if not self.is_60_angle(triangle):
+                    self.status_browser.append("The data has no valid triangle")
+                    return False
+
+                if not self.is_inside_triangle(starting_point,triangle):
+                    self.status_browser.append(
+                        "The staring point is not inside of triangle")
+                    return False
+
+                self.set_vertices(triangle)
+                self.scale_num.setValue(triangle[2][0])
+                self.show_triangle_coor()
+                self.point_s_x.setValue(int(starting_point[0]))
+                self.point_s_y.setValue(int(starting_point[1]))
+                self.set_points(points)
+                self.num_steps.setValue(len(points))
+                self.run_chaos_game_step(len(points))
+
+                # place values
+
+        except Exception as e:
+            self.status_browser.append("Error occur")
+            print(f"Error: {e} Type: {type(e)}")
+
+    def show_triangle_coor(self):
         vertices = self.get_vertices()
         for index,point in enumerate([self.point_a,self.point_b,self.point_c]):
             point.setText(f"( {round(vertices[index][0],3)} , {round(vertices[index][1],3)} )")
+
+    def generate_valid_triangle(self):
+        self.set_range()
+        super().generate_valid_triangle()
+        self.show_triangle_coor()
 
     def generate_random_point(self):
         self.set_range()
@@ -130,6 +178,7 @@ class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
         self.generate_valid_triangle()
         self.generate_random_point()
         self.generate_random_steps()
+        self.step_at.setText("0")
         self.step_all.setText(str(self.num_steps.value()))
 
     def scatter_points(self,x_data,y_data,point_color="points"):

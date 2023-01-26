@@ -523,7 +523,7 @@ border: 1px solid #E5E5E5;
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,0,0,1">
+              <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0,0,0">
                <item>
                 <widget class="QLabel" name="label_9">
                  <property name="font">
@@ -537,26 +537,26 @@ border: 1px solid #E5E5E5;
                 </widget>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="point_s_x">
+                <widget class="QSpinBox" name="point_s_x">
                  <property name="font">
                   <font>
                    <family>Roboto</family>
                   </font>
                  </property>
                  <property name="maximum">
-                  <double>1000000.000000000000000</double>
+                  <number>1000000</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="point_s_y">
+                <widget class="QSpinBox" name="point_s_y">
                  <property name="font">
                   <font>
                    <family>Roboto</family>
                   </font>
                  </property>
                  <property name="maximum">
-                  <double>1000000.000000000000000</double>
+                  <number>1000000</number>
                  </property>
                 </widget>
                </item>

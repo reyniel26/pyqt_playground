@@ -21,6 +21,12 @@ class SierpinskiTriangle():
 
         self._points = []
 
+    def set_vertices(self,triangle):
+        self._vertices = triangle
+
+    def set_points(self,points):
+        self._points = points
+
     def get_random_vertex(self)->tuple:
         """Return random vertex"""
         return self._vertices[random.randint(0,2)]

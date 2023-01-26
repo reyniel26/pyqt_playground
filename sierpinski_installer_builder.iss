@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Sierpinski Triangle Emulator"
-#define MyAppVersion "v0.1"
+#define MyAppVersion "v0.2"
 #define MyAppPublisher "Reyniel Mark Escamillas"
 #define MyAppURL "https://github.com/reyniel26/pyqt_playground"
 #define MyAppExeName "sierpinski_app.exe"
