@@ -2,6 +2,8 @@
 
 - Visualize the Sierpinski Triangle
 
+![Sierpinski_Triangle_Logo-nobg](https://user-images.githubusercontent.com/58727783/214821362-799efcb6-45c5-4b74-b36d-999a62ae0727.png)
+
 I just see this in TikTok and I want to try it. So that I research, and created a desktop app that will emulate Sierpinski Triangle.
 
 The Chaos Game
