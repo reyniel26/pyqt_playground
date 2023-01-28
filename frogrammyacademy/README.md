@@ -2,7 +2,7 @@
 
 - Simple Desktop Game that I created during my college days
 
-<iframe width="948" height="533" src="https://www.youtube.com/embed/_BwWpLU7Pdg" title="Frogrammy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Sample Video
+[![Frogrammy Academy Sample Video](http://img.youtube.com/vi/_BwWpLU7Pdg/0.jpg)](http://www.youtube.com/watch?v=_BwWpLU7Pdg)
 
-
-I write this program in Java and now my target is recreate it in PyQt. 
+I write this program in Java and now my target is recreate it in PyQt.
