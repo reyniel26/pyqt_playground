@@ -1,4 +1,5 @@
 # Frogrammy Academy
+![ICON](https://user-images.githubusercontent.com/58727783/215266606-e7f3141b-b16c-4255-a460-37de8cc68171.png)
 
 - Simple Desktop Game that I created during my college days
 
