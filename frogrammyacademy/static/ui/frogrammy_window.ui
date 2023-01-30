@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color:#333333;
+color:white;</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="home_page">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../images/MainScreenPicture.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="credits_page"/>
+      <widget class="QWidget" name="tutorial_page">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../images/MainTutorial.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar{
+background-color:black;
+color:white;
+}
+
+QMenuBar::item:selected{
+background-color:#333333;
+color:white;
+}
+
+QMenu{
+background-color:black;
+color:white;
+}
+
+QMenu::separator{
+background:white;
+}
+
+QMenu::item:selected{
+background-color:#333333;
+color:white;
+}</string>
+   </property>
+   <widget class="QMenu" name="menu_menu">
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="action_home"/>
+    <addaction name="action_debugging"/>
+    <addaction name="separator"/>
+    <addaction name="action_exit_game"/>
+   </widget>
+   <widget class="QMenu" name="menuCredits">
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+     </font>
+    </property>
+    <property name="title">
+     <string>Credits</string>
+    </property>
+    <addaction name="action_credits"/>
+   </widget>
+   <widget class="QMenu" name="menuTutorial">
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+     </font>
+    </property>
+    <property name="title">
+     <string>Tutorial</string>
+    </property>
+    <addaction name="action_tutorial"/>
+   </widget>
+   <addaction name="menu_menu"/>
+   <addaction name="menuTutorial"/>
+   <addaction name="menuCredits"/>
+  </widget>
+  <action name="action_home">
+   <property name="text">
+    <string>Home</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+    </font>
+   </property>
+  </action>
+  <action name="action_debugging">
+   <property name="text">
+    <string>Debugging</string>
+   </property>
+  </action>
+  <action name="actionCredits">
+   <property name="text">
+    <string>Credits</string>
+   </property>
+  </action>
+  <action name="actionTutorial">
+   <property name="text">
+    <string>Tutorial</string>
+   </property>
+  </action>
+  <action name="action_exit_game">
+   <property name="text">
+    <string>Exit Game</string>
+   </property>
+  </action>
+  <action name="action_credits">
+   <property name="text">
+    <string>The Creator</string>
+   </property>
+  </action>
+  <action name="action_tutorial">
+   <property name="text">
+    <string>Tutorial</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
