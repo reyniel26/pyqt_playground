@@ -61,5 +61,5 @@ class FrogrammyAcademyWindow(QMainWindow):
         self.main_stack_widget.setCurrentIndex(2)
 
     def display_debugging_game(self):
-        self.debugging_game.debugging_stack_widget.setCurrentIndex(0)
+        self.debugging_game.display_home()
         self.main_stack_widget.setCurrentIndex(3)

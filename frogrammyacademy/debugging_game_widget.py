@@ -30,7 +30,10 @@ class DebuggingGameWidget(QWidget):
     def display_trivia(self):
         self.debugging_stack_widget.setCurrentIndex(2)
 
-    def play_gif(self):
-        movie = QMovie(static_image_path("DebuggingTitleScreenPicture.gif"))
-        self.debugging_display_label.setMovie(movie)
+    def play_gif_by_label(self,label,gif_file):
+        movie = QMovie(static_image_path(gif_file))
+        label.setMovie(movie)
         movie.start()
+
+    def play_gif(self):
+        self.play_gif_by_label(self.debugging_display_label,"DebuggingTitleScreenPicture.gif")
