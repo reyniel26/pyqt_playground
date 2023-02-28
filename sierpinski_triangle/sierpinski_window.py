@@ -18,7 +18,7 @@ class SierpinskiTriangleWindow(QMainWindow,SierpinskiTriangle):
         ui_file = static_ui_path("sierpinski_window.ui")
         uic.loadUi(ui_file,self)
 
-        self.setWindowTitle("Sierpinski Triangle Emulator")
+        self.setWindowTitle("Sierpinski Triangle Simulator")
 
         iconpath = static_image_path("Sierpinski_Triangle_Logo-nobg.png")
 

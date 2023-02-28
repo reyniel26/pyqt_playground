@@ -5,7 +5,7 @@
 
 |#| App | Version |
 |----| ------ | ----------- |
-| 1 | Sierpinski Triangle   | v0.2 |
+| 1 | Sierpinski Triangle Simulator  | v0.2.2 |
 | 2 | Alarmo | To do  |
 | 3 | Frogrammy Acadamy | In Progress |
 | 4 | Brain Pressure 100 |  To do |
