@@ -23,7 +23,7 @@ pefile==2022.5.30
 Pillow==9.4.0
 platformdirs==2.6.2
 pluggy==1.0.0
-pyinstaller==5.7.0
+pyinstaller==5.13.1
 pyinstaller-hooks-contrib==2022.15
 pylint==2.15.10
 pyparsing==3.0.9
